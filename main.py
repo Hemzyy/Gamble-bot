@@ -70,4 +70,4 @@ async def on_message(message):
         await message.channel.send('<@'+ str(message.author.id)+'>, '+ checkBalance(str(sender)))
                     
 
-client.run()
+client.run(TOKEN)
