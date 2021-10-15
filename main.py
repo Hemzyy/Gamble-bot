@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 import math
 
 client = discord.Client() #connection to discord
+load_dotenv()
 
 @client.event #register an event
 async def on_ready():
@@ -71,5 +72,4 @@ async def on_message(message):
         await message.channel.send('<@'+ str(message.author.id)+'>, '+ checkBalance(str(sender)))
                     
 
-load_dotenv()
 client.run(os.getenv('TOKEN'))
