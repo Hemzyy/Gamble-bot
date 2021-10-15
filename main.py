@@ -1,5 +1,6 @@
 import discord, os
 from gameFunctions import *
+from dotenv import load_dotenv
 import math
 
 client = discord.Client() #connection to discord
@@ -70,4 +71,5 @@ async def on_message(message):
         await message.channel.send('<@'+ str(message.author.id)+'>, '+ checkBalance(str(sender)))
                     
 
-client.run(TOKEN)
+load_dotenv()
+client.run(os.getenv('TOKEN'))
